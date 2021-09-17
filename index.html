@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="preconnect" href="//cdn.w3cbus.com">
+    <link rel="preconnect" href="//cdn.jsdelivr.net">
+    <script
+            src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous"
+    ></script>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+            integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+            crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <title>DdB的个人简历</title>
+    <style>
+        .index{
+            z-index:999;
+            text-align: center;
+        }
+        @keyframes holdUp {
+            from{
+                height: 100vh;
+            }
+            to{
+                height: 30%;
+            }
+        }
+        @-webkit-keyframes holdUp {
+            from{
+                height: 100vh;
+            }
+            to{
+                height: 30%;
+            }
+        }
+        .showUp{
+            animation: showUp 1s forwards;
+            animation-delay: 1.2s;
+            opacity: 0;
+        }
+        @keyframes showUp {
+            from{
+                margin-top: 70vh;
+                opacity: 0;
+            }
+            to{
+                margin-top: 40vh;
+                opacity: 1;
+            }
+        }
+        @-webkit-keyframes showUp {
+            from{
+                margin-top: 70vh;
+                opacity: 0;
+            }
+            to{
+                margin-top: 40vh;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="mdui-bottom-nav-fixed" style="font-size:5vw;text-align: center; ">
+<!--靠引用的include.js来获取其他文件模板-->
+<include src="view/header.html"></include>
+
+<div id="index" style="position:absolute;margin:0;padding:0;width: 100%;height: 100vh;">
+</div>
+
+<div class="showUp" style="width:70%;margin-top:40vh;margin-left:15%;position: absolute;">
+    <p style="font-size: 8vw;">FOREVER DDB</p><br>
+    <p style="font-size: 3vw;" class="index fadeIn a-time1 a-delay2">FOR A NEW DREAMING WORLD </p>
+    <p style="font-size: 3vw;" class="index fadeIn a-time1 a-delay2">Learning ↓ Creating</p><br><br><br>
+    <button onclick="javascript:window.location = 'modules/desc.html';" style="margin-bottom:10vh;font-size: 5vw;width: 35vw;height: 10vw;" class="fadeIn a-time023 a-delay023 mdui-btn mdui-btn-raised mdui-ripple mdui-color-blue-400 mdui-text-color-white">了 解 我</button>
+<!--    <button onclick="javascript:window.location = 'products.html';" style="font-size: 5vw;width: 35vw;height: 10vw;" class="fadeIn a-time023 a-delay023 mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent">项 目 一 览</button>-->
+</div>
+<!--<img class="showInBottom a-time1 a-delay023" style="position:absolute;bottom:0;width: 100%;height:20vh;left: 0;z-index: -200;" src="img/index.png">-->
+
+<include src="view/footer.html"></include>
+
+    <script>
+        //用js和随机数渲染页面顶部色块
+        var parent = document.getElementById('index');
+        var theWidth = 0;
+        var timeAry = ['005', '007', '009', '1', '013', '015', '017', '019'];//预设动画可能的时长
+        while (theWidth <= 100) {
+            var width = Math.floor(Math.random() * 7) / 2;
+            var height = Math.floor(Math.random() * 60) + 45;
+            var time = timeAry[Math.floor(Math.random() * timeAry.length)];
+            var div = document.createElement('div');
+            div.style.float = 'left';
+            div.style.display = 'block';
+            theWidth += width;
+            if (theWidth > 100) {
+                width = width - (theWidth - 100);
+            }
+            div.style.width = width + '%';
+            div.style.height = height + '%';
+            div.style.backgroundColor = 'rgba(' + (Math.random() * 50 + 40) + ',' + (Math.random() * 50 + 40) + ',' + (Math.random() * 200 + 40) + ',' + (Math.random() * 0.9 + 0.1) + ')';
+            div.className = 'showTop a-time' + time;
+            parent.append(div);
+        }
+        setTimeout(function () {
+            parent.style.animation = 'holdUp 2s forwards';
+        },1000);
+    </script>
+    <script src="js/include.js"></script>
+</body>
+</html>

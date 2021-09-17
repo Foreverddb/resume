@@ -1,0 +1,33 @@
+<!--顶部导航-->
+<div style="position: fixed;width: 100%;z-index: 1000;background-color: white;" overlay="true" mdui-headroom id="bar" class="showTop a-time1 a-delay023 mdui-appbar">
+    <div class="mdui-toolbar">
+        <button mdui-drawer="{target: '#drawer'}" class="mdui-btn mdui-ripple mdui-btn-icon" mdui-tooltip="{content: '菜单'}"><i class="mdui-icon material-icons">menu</i></button>
+        <a href="javascript:;" class="mdui-typo-headline">DdB's Resume</a>
+<!--        <a href="javascript:;" class="mdui-typo-title">FOR THE GREATER WORLD</a>-->
+        <div class="mdui-toolbar-spacer"></div>
+<!--        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="javascript:window.location = window.location.href;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+        <a href="javascript:window.location = './admin/index.php';" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">more_vert</i></a>
+    </div>
+</div>
+<!--抽屉式导航-->
+<div id="drawer" style="z-index: 9999;font-size: 6vh;" overlay="true" class="mdui-drawer-close mdui-color-white mdui-drawer mdui-shadow-4">
+    <ul class="mdui-list">
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+            <a href="/index.html" class="mdui-list-item-content">首页</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">description</i>
+            <a href="/modules/desc.html" class="mdui-list-item-content">个人介绍</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">local_mall</i>
+            <a href="/modules/products.html" class="mdui-list-item-content">项目一览</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">feedback</i>
+            <a href="/modules/advice.html" class="mdui-list-item-content">提供建议</a>
+        </li>
+    </ul>
+</div>
